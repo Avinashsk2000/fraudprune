@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>signup</title>
+  </head>
+  <style>
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 2px solid #ccc;
+      box-sizing: border-box;
+      size: 20;
+    }
+    button {
+      background-color: Green;
+      color: white;
+      padding: 15px 20px;
+      margin: 8px 0;
+      cursor: pointer;
+      width: 100%;
+    }
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    .container {
+      padding: 80px;
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+    .center-screen {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+    }
+    .resetbtn,
+    .signupbtn {
+      float: center;
+      width: 50%;
+    }
+  </style>
+  <body>
+    <div class="center-screen">
+      <h1>Signup</h1>
+      <form action="signup" method="post" style="border: 1px solid #000">
+        {% csrf_token %}
+        <div class="container">
+          <label><b>First Name</b></label>
+          <input
+            type="text"
+            name="first_name"
+            placeholder="First Name"
+            required
+          /><br />
+          <label><b>Last Name</b></label>
+          <input
+            type="text"
+            name="last_name"
+            placeholder="Last Name"
+            required
+          /><br />
+          <label><b>Username</b></label>
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            required
+          /><br />
+          <label><b>Email</b></label>
+          <input type="email" name="email" placeholder="Email" required /><br />
+          <label><b>Password</b></label>
+          <input
+            type="password"
+            name="password1"
+            placeholder="Password"
+            required
+          /><br />
+          <label><b>Confirm Password</b></label>
+          <input
+            type="password"
+            name="password2"
+            placeholder="Enter The Password Again"
+            required
+          /><br />
+
+          <div class="clearfix">
+            <button type="submit" class="signupbtn">Signup</button>
+            <button type="reset" class="resetbtn">reset</button>
+          </div>
+        </div>
+      </form>
+      <div>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

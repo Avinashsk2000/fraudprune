@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>register_account</title>
+  </head>
+  <style>
+    /*add full-width input fields*/
+    body {
+      height: 80vh;
+      margin-top: 200px;
+      padding: 30px;
+      font-size: 20px;
+    }
+    input[type="text"],
+    input[type="pin"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 2px solid #ccc;
+      box-sizing: border-box;
+    }
+    /* set a style for all buttons*/
+
+    button {
+      background-color: rgba(0, 107, 0, 0.979);
+      color: white;
+      padding: 15px 20px;
+      margin: 8px 0;
+      cursor: pointer;
+      width: 100%;
+    }
+    /*set styles for the cancel button*/
+
+    .resetbtn {
+      padding: 15px 20px;
+      background-color: green;
+    }
+    /*float cancel and signup buttons and add an equal width*/
+
+    .resetbtn,
+    .registerbtn {
+      float: center;
+      width: 50%;
+    }
+    /*add padding to container elements*/
+
+    .container {
+      padding: 80px;
+      margin: 20px;
+    }
+    /*clear floats*/
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    /*styles for cancel button and signup button
+    on extra small screens*/
+
+    @media screen and (max-width: 300px) {
+      .registerbtn,
+      .resetbtn {
+        width: 100%;
+      }
+    }
+
+    .center-screen {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+    }
+    
+    
+    
+  </style>
+
+  <body>
+    <div class="center-screen">
+      <h2>Register Account</h2>
+      <!--Step 1:Adding HTML-->
+
+      <form
+        action="register_account"
+        method="post"
+        style="border: 1px solid #000"
+      >
+        {% csrf_token %}
+        <div class="container">
+          <label><b>Email</b></label>
+          <input
+            type="text"
+            placeholder="Enter registered mail"
+            name="email"
+            required
+          />
+
+          <label><b>Account Number</b></label>
+          <input
+            type="text"
+            placeholder="Account Number"
+            name="account_number"
+            required
+          />
+
+          <label><b>Current PIN</b></label>
+          <input
+            type="password"
+            placeholder="Enter 4 digit Current PIN"
+            name="Current_PIN"
+            required
+          />
+
+          <label><b>New PIN</b></label>
+          <input
+            type="password"
+            placeholder="Enter 4 digit New PIN"
+            name="New_PIN"
+            required
+          />
+
+          <div class="clearfix">
+            <button type="submit" class="registerbtn">Register</button>
+            <button type="reset" class="resetbtn">Reset</button>
+          </div>
+        </div>
+      </form>
+    
+      <div>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+      </div>
+    
+    </div>
+  </body>
+</html>
