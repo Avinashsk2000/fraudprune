@@ -4,13 +4,6 @@
     <title>register_account</title>
   </head>
   <style>
-    /*add full-width input fields*/
-    body {
-      height: 80vh;
-      margin-top: 200px;
-      padding: 30px;
-      font-size: 20px;
-    }
     input[type="text"],
     input[type="pin"],
     input[type="password"] {
@@ -21,7 +14,6 @@
       border: 2px solid #ccc;
       box-sizing: border-box;
     }
-    /* set a style for all buttons*/
 
     button {
       background-color: rgba(0, 107, 0, 0.979);
@@ -31,49 +23,34 @@
       cursor: pointer;
       width: 100%;
     }
-    /*set styles for the cancel button*/
 
     .resetbtn {
       padding: 15px 20px;
       background-color: green;
     }
-    /*float cancel and signup buttons and add an equal width*/
 
     .resetbtn,
     .registerbtn {
       float: center;
       width: 50%;
     }
-    /*add padding to container elements*/
 
     .container {
       padding: 80px;
       margin: 20px;
     }
-    /*clear floats*/
 
     .clearfix::after {
       content: "";
       clear: both;
       display: table;
     }
-    /*styles for cancel button and signup button
-    on extra small screens*/
-
-    @media screen and (max-width: 300px) {
-      .registerbtn,
-      .resetbtn {
-        width: 100%;
-      }
-    }
-
     .center-screen {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      min-height: 100vh;
     }
     
     
@@ -88,10 +65,10 @@
       <form
         action="register_account"
         method="post"
-        style="border: 1px solid #000"
+        
       >
         {% csrf_token %}
-        <div class="container">
+        <div class="container" style="border: 1px solid #000">
           <label><b>Email</b></label>
           <input
             type="text"

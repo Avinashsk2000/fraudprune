@@ -1,11 +1,15 @@
 import uuid
-from .models import customer, register_acc, transaction
+
+from django.http import HttpResponse
+from .models import confirmation, customer, register_acc, transaction
 from django.contrib.auth import authenticate
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
-
+from django.db.models import F
+#import cv2
+ 
 
 # Create your views here.
 
@@ -22,7 +26,6 @@ def bank(request):
 
 ##############################################
 ##############################################
-
 
 def signup(request):
     if request.method == 'POST':
@@ -146,14 +149,21 @@ def withdraw(request):
 
             if v2.New_PIN == PIN:
                 if int(amount) <= int(v3.balance):
+                    v9=confirmation()
+                    v9.Email=request.user.email
+                    v9.status=1
+                    v9.save()
                     unique_code = uuid.uuid4()
                     v4 = transaction()
-                    v4.unique_code_s = unique_code
+                    v4.unique_code_s = str(unique_code)
                     v4.amount = amount
-                    v4.Email = request.user.email
+                    v4.Email = str(request.user.email)
                     v4.save()
-
-                    return render(request, 'qr.html', {'uniquecode': unique_code})
+                    aa=int(v3.balance)-int(amount)
+                    v3.balance=aa
+                    v3.save()
+                    u = v4.Email + v4.unique_code_s
+                    return render(request, 'qr.html', {'uniquecode': u })
 
                 else:
                     messages.error(request, 'insufficient balance')
@@ -176,3 +186,33 @@ def withdraw(request):
 def logout(request):
     auth.logout(request)
     return redirect('login')
+
+#####################################################################
+#####################################################################
+
+def check_balance(request):
+
+    if request.method == 'POST':
+        
+        PIN = request.POST.get('PIN')
+        v6 = customer.objects.get(Email=request.user.email)
+        v7 = register_acc.objects.get(Email=request.user.email)
+
+        if v7.New_PIN == PIN:
+             return render(request,'check_balance.html',{'check_balance':v6.balance})
+        else:
+            messages.error(request, 'incorrect PIN')
+            return render(request, 'check_balance.html')
+    else:
+        return render(request, 'check_balance.html')
+    
+#####################################################################
+#####################################################################
+    
+def set(request):
+    v8=confirmation()
+    v8.Email=request.user.email
+    v8.status=0
+    v8.save()
+    return render(request, 'success.html')
+    # object v9 is used

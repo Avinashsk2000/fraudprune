@@ -25,9 +25,7 @@
     a:hover {
       background-color: #013220;
     }
-    .container {
-      padding: 150px;
-    }
+    
     h1 {
       text-align: center;
     }
@@ -41,23 +39,19 @@
         <b>Email: {{email}}</b>
       </p></div>
       <h1>ATM</h1>
-    <div class="center-screen" style="border: 1px solid #000">
-      <form>
-        
-        {% csrf_token %}
-        <a href="withdraw"> withdraw </a>
-        <br /><br /><br />
-        <a href="register_account"> register_account </a>
-        <br /><br /><br />
-        <a href="logout"> logout </a>
-        <!--
-          <button type="submit" class="checkbal">check balance</button>
-        <br />
-        <button type="reset" class="resetbtn">reset PIN</button>
-        <br />
-        >
-      </form>
-    </div>
+    
+  </div>
+  <div class="center-screen" style="border: 1px solid #000">
+    <form>
+      {% csrf_token %}
+      <a href="withdraw"> withdraw </a>
+      <br /><br /><br />
+      <a href="register_account"> register_account </a>
+      <br /><br /><br />
+      <a href="check_balance"> check_balance </a>
+      <br /><br /><br />
+      <a href="logout"> logout </a>
+    </form>
   </div>
   </body>
 </html>

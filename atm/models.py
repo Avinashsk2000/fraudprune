@@ -1,6 +1,8 @@
 from django.db import models
 from django.db.models.fields import EmailField
 import uuid
+from django.utils import timezone
+from grpc import Status
 
 # Create your models here.
 
@@ -24,3 +26,8 @@ class transaction(models.Model):
     Email = models.EmailField(primary_key=True)
     amount = models.IntegerField()
     unique_code_s = models.UUIDField(default=uuid.uuid4)
+    ts = models.DateTimeField(default=timezone.now, blank=False, null=False)
+    
+class confirmation(models.Model):
+    Email=models.EmailField(primary_key=True)
+    status=models.IntegerField()

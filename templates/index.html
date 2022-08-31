@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=, initial-scale=1.0" />
-    <title>index</title>
-  </head>
-  <style>
-    .center-screen {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 150px;
-    }
-    a {
-      background-color: green;
-      color: white;
-      padding: 1em 1.5em;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-    a:hover {
-      background-color: #013220;
-    }
-    .container {
-      padding: 150px;
-    }
-    h1 {
-      text-align: center;
-    }
-  </style>
-  <body>
-    <div class="container">
-      <h1>HomePage</h1>
-      <div class="center-screen" style="border: 1px solid #000">
-        <a href="login">login</a><br />
-        <a href="signup">signup</a>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=, initial-scale=1.0" />
+  <title>index</title>
+</head>
+<style>
+  .center-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 150px;
+    border: 1px solid #000;
+  }
+
+  a {
+    background-color: green;
+    color: white;
+    padding: 1em 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  a:hover {
+    background-color: #013220;
+  }
+
+  .container {
+    margin: auto;
+    padding: 10px;
+  }
+
+  h1 {
+    text-align: center
+  }
+</style>
+
+<body>
+  <div class="container">
+    <h1>HomePage</h1>
+    <div class="center-screen" >
+      <a href="login">login</a><br />
+      <a href="signup">signup</a>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

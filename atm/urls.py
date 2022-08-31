@@ -8,5 +8,7 @@ urlpatterns = [
     path("withdraw", views.withdraw, name="withgraw"),
     path("bank", views.bank, name="bank"),
     path("logout", views.logout, name="logout"),
+    path("check_balance",views.check_balance, name="check_balance"),
+    path("set",views.set,name="set"),
 
 ]

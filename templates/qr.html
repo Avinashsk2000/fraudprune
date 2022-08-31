@@ -2,6 +2,7 @@
 <html>
   <head>
     <!-- Include Bootstrap for styling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
@@ -12,10 +13,24 @@
         width: 300px;
       }
       body {
-        height: 80vh;
-        margin-top: 200px;
+        height: 10vh;
+        margin-top: 30px;
         padding: 30px;
         font-size: 20px;
+      }
+      button {
+        background-color: Green;
+        color: white;
+        padding: 15px 20px;
+        margin: 8px 0;
+        cursor: pointer;
+      }
+      .center-screen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
       }
     </style>
 
@@ -63,5 +78,13 @@
         $(".qr-code").attr("src", finalURL);
       });
     </script>
+    <br>
+    <form action="set" method="post">
+            {% csrf_token %}
+        <div class="center-screen">
+          <p><strong>Press the button after showing QR to ATM</strong></p>
+            <button type="submit" class="yesbtn">confirm</button>
+        </div>
+    </form>
   </body>
 </html>

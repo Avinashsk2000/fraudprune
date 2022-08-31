@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login</title>
   </head>
   <style>
-    /*add full-width input fields*/
     input[type="text"],
     input[type="password"] {
       width: 100%;
@@ -14,7 +14,6 @@
       border: 2px solid #ccc;
       box-sizing: border-box;
     }
-    /* set a style for all buttons*/
 
     button {
       background-color: Green;
@@ -22,16 +21,12 @@
       padding: 15px 20px;
       margin: 8px 0;
       cursor: pointer;
-      width: 100%;
     }
-    /*set styles for the cancel button*/
 
     .loginbtn {
       padding: 15px 20px;
       background-color: #027407;
     }
-    /*float cancel and signup buttons and add an equal width*/
-
     .resetbtn {
       float: center;
       width: 50%;
@@ -41,27 +36,16 @@
       float: center;
       width: 50%;
     }
-    /*add padding to container elements*/
 
     .container {
       padding: 80px;
       margin: 20px;
     }
-    /*clear floats*/
 
     .clearfix::after {
       content: "";
       clear: both;
       display: table;
-    }
-    /*styles for cancel button and signup button
-	on extra small screens*/
-
-    @media screen and (max-width: 300px) {
-      .loginbtn,
-      .resetbtn {
-        width: 100%;
-      }
     }
 
     .center-screen {
@@ -70,7 +54,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      min-height: 100vh;
+
     }
   </style>
 
