@@ -19,7 +19,7 @@ Another important role of mobile is to display the QR code. The generation of QR
 The choice of displaying QR code on mobile screen reduce fraud activity by not allowing the fraudsters to access sensitive information in QR code, over displaying the QR code on the ATM screen.
 
 ### SERVER
-The Server is the third and last component of the proposed methodology. It serves as the hub of authentication and c. It incorporates the Database, thus holding information about the user account and the transactions.
+The Server is the third and last component of the proposed methodology. It serves as the hub of authentication and It incorporates the Database, thus holding information about the user account and the transactions.
 
 In this proposal, a dedicated Laptop is used as a server. A local network is established by connecting the ATM and Mobile to the IP address of the laptop resembling a server. Through this network, the Mobile and ATM communicate through the server for Pin and UUID validation.
 When the user registers their account via their smartphone on our webpage, The data is stored as a table in the database held on the server. The server utilizes the data stored at this instance to authenticate the security pin of the user, by comparing the entered secure pin and existing secure pin i.e., the pin which was set by the user at the time of account registration. This process is termed has Pin Authentication or Pin Validation.
