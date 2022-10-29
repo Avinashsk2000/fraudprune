@@ -2,7 +2,11 @@
 
 We are aware that the current technology under implementation to withdraw money is that we use an ATM card in which the data is incorporated in the magnetic stripe, and the user must enter a four-digit secure PIN for transactions. This method is prone to many frauds such as ATM card skimming, reply attack, shoulder surfing, and video recording with hidden cameras, which occur at ATM terminals. This project work proposes a novel approach for fraud pruning at ATM terminals by eliminating the need for ATM cards making them contactless and secure. In this new way of authentication, the complete process is contactless, and this avoids the spread of contagious viruses such as COVID19 pandemic situation. The proposed methodology uses mobile, to which after authentication, a unique code will be sent by the server and the same is used to generate the QR code. The generated QR code needs to be scanned through the ATM. A hardware model for ATM machine has been designed and QR code was used successfully to collect the amount entered in the mobile phone from the model.
 
-## Dedicated Website for the methodology:
+## The Project Methodology is Shown Below:
+![image](https://user-images.githubusercontent.com/84611916/198832620-9ac8b2c3-606a-484f-ba3c-2aee3f983bc1.png)
+
+
+## Dedicated Website for the Methodology:
 ### MOBILE
 Mobile devices or smartphone is a crucial component in the proposed methodology. Mobile provides an interface for the user to interact with our mechanism. The user will have to browse our web page to initially set up their account. This can be done by following the sequence of signup, login, and register themselves.
 
