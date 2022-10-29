@@ -23,6 +23,7 @@ The Server is the third and last component of the proposed methodology. It serve
 
 In this proposal, a dedicated Laptop is used as a server. A local network is established by connecting the ATM and Mobile to the IP address of the laptop resembling a server. Through this network, the Mobile and ATM communicate through the server for Pin and UUID validation.
 When the user registers their account via their smartphone on our webpage, The data is stored as a table in the database held on the server. The server utilizes the data stored at this instance to authenticate the security pin of the user, by comparing the entered secure pin and existing secure pin i.e., the pin which was set by the user at the time of account registration. This process is termed has Pin Authentication or Pin Validation.
+
 In the process of Pin authentication, if the comparison result is successful i.e., both the PINS matched a UUID will be generated at the Server. This UUID is stored in the database of the server and then sent to the user which is displayed on the mobile screen as a QR code.
 
 When the user scans the QR Code at the ATM terminal, The QR code is converted into UUID by the ATM and is sent to the server for UUID authentication.
